@@ -1,0 +1,189 @@
+/*----------------------------------------------------------------------------------------------------------*/
+/* Reset (Inspired by E. Meyers)
+/*----------------------------------------------------------------------------------------------------------*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;padding: 0;border: 0;font-size: 100%;font: inherit;vertical-align: baseline;}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;}
+body {line-height: 1;-webkit-font-smoothing: antialiased;-webkit-text-size-adjust: 100%;}
+table {border-collapse: collapse;border-spacing: 0;}
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.ie6 *,
+.ie7 * {
+    behavior: url(fileadmin/templates/layout/js/boxsizing.htc);
+}
+
+/*----------------------------------------------------------------------------------------------------------*/
+/* Normalize by Necolas & Boilerplate
+/*----------------------------------------------------------------------------------------------------------*/
+/* Addresses font-family inconsistency between 'textarea' and other form elements.*/
+html { font-size: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+html, button, input, select, textarea { font-family: sans-serif;}
+/* Prevents sub and sup affecting line-height in all browsers */
+sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+/*
+ * Improves image quality when scaled in IE7
+ */
+img {
+    -ms-interpolation-mode: bicubic;
+}
+/* Forms
+================================================== */
+/* align checkboxes, radios, text inputs with their label */
+input[type="radio"] { vertical-align: text-bottom; }
+input[type="checkbox"] { vertical-align: bottom; }
+/*
+ * 1. Removes default vertical scrollbar in IE6/7/8/9
+ * 2. Improves readability and alignment in all browsers
+ */
+textarea {
+    overflow: auto; /* 1 */
+    vertical-align: top; /* 2 */
+}
+/* hand cursor on clickable input elements */
+label, input[type=button], input[type=submit], button { cursor: pointer; }
+/*
+ * 1. Corrects color not being inherited in IE6/7/8/9
+ * 2. Corrects text not wrapping in FF3
+ */
+legend {
+    border: 0; /* 1 */
+    padding: 0;
+    white-space: normal; /* 2 */
+}
+
+
+
+/*
+ * 1. Corrects font size not being inherited in all browsers
+ * 2. Addresses margins set differently in IE6/7, FF3+, S5, Chrome
+ * 3. Improves appearance and consistency in all browsers
+ */
+button,input,select,textarea {
+    font-size: 100%; /* 1 */
+    margin: 0; /* 2 */
+    vertical-align: baseline; /* 3 */
+}
+/*
+ * 1. Improves usability and consistency of cursor style between image-type 'input' and others
+ * 2. Corrects inability to style clickable 'input' types in iOS
+ */
+button,input[type="button"],input[type="reset"],input[type="submit"] {
+    cursor: pointer; /* 1 */
+    -webkit-appearance: button; /* 2 */
+}
+/* Removes inner spacing in IE7 without affecting normal text inputs */
+.ie7 button,.ie7 input[type="button"],.ie7 input[type="reset"],.ie7 input[type="submit"] {overflow: visible;}
+/* Re-set default cursor for disabled elements */
+button[disabled],input[disabled] {cursor: default;}
+/* Removes inner padding and search cancel button in S5, Chrome on OS X */
+input[type="search"]::-webkit-search-decoration,input[type="search"]::-webkit-search-cancel-button {-webkit-appearance: none;}
+/* Removes inner padding and border in FF3+ */
+button::-moz-focus-inner,input::-moz-focus-inner {border: 0;padding: 0;}
+/*----------------------------------------------------------------------------------------------------------*/
+/* Helferklassen
+/*----------------------------------------------------------------------------------------------------------*/
+.hidden { display: none; visibility: hidden; }
+.visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
+/* Clearfix */
+.clearfix:before, .clearfix:after {
+    content: "\0020";
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; }
+
+/*----------------------------------------------------------------------------------------------------------*/
+/* Styles
+/*----------------------------------------------------------------------------------------------------------*/
+html {
+height: 100%;
+}
+body {
+height: 100%;
+}
+/*Start */
+.start {
+    display: none;
+    -webkit-transition: opacity 1s ease-out;
+    opacity: 0; 
+}
+#toggel,
+#buzzer,
+.start.visible {
+    opacity: 1;
+    display: block;
+}
+
+#toggel,
+#buzzer {
+    position: absolute;
+}
+#toggel {
+    right: 200px;
+    bottom: 0;
+}
+#buzzer {
+    right: 150px;
+    bottom: 0;
+}
+/* Play */
+img.selected{ border:1px solid black;}
+li img { 
+    width: 100%; 
+    height:auto; 
+    cursor:pointer;
+}
+li { 
+    display: block;
+    width: 100%;
+    float:left;
+}
+#selected li {
+    position: absolute;
+    left: 20px;
+    z-index: 1;
+    width: 200px;
+    height: 150px;
+    border: 1px solid red;
+    background: green;
+}
+.nth-child-1 {
+    top: 20px;
+}
+.nth-child-2 {
+    top: 200px;
+}
+.nth-child-3 {
+    top: 420px;
+}
+
+#slides {
+    position: relative;
+    overflow: hidden;
+
+    width: 100%;
+    height: 100%;
+    background: #000;
+    display: block;
+}
+.slide {
+    position: absolute;
+    top: 0;left: 0;
+    display: none;
+}
+.slide:focus {
+    top: 20px;
+    border: 30px solid red;
+}
+li.slide:first-child {
+    display: block;
+}

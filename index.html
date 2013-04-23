@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+ 
+  <head>
+  <link 
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+
+    <!-- Start Template -->
+    <script id="start" type="text/template">
+      <div id="<%= uid %>" class="start"><img src="<%= uri %>" height="100" /></div>
+    </script>
+
+    <!-- Game Templates -->
+    <script id="selected" type="text/template">
+    <% _.each(selected, function(animal) { %> 
+        <li class="<%= animal.category %>"><%= animal.title %></li>
+    <% }); %>
+    </script>
+    <script id="slide" type="text/template">
+        <img src="<%= uri %>" />
+    </script>
+
+    <!-- Resultate Template -->
+    <script id="res" type="text/template">
+      <img src="<%= uri %>" class="resImage" /><div class="resText"><p><%= text %></p></div><div  class="resCategory <%= category %>"></div>
+    </script>
+
+
+
+    <script type="text/javascript" src="libs.js"></script>
+    <script type="text/javascript" src="backbone-mediator.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+
+    <script type="text/javascript" src="Game/Router/Router.js"></script>
+    <script type="text/javascript" src="Game/Models/Animal.js"></script>
+    <script type="text/javascript" src="Game/Models/Start.js"></script>
+    <script type="text/javascript" src="Game/Collections/Slides.js"></script>
+    <script type="text/javascript" src="Game/Collections/Selected.js"></script>
+    <script type="text/javascript" src="Game/Collections/Start.js"></script>
+    <script type="text/javascript" src="Game/Views/Slides.js"></script>
+    <script type="text/javascript" src="Game/Views/Slide.js"></script>
+    <script type="text/javascript" src="Game/Views/Selected.js"></script>
+    <script type="text/javascript" src="Game/Views/Start.js"></script>
+    <script type="text/javascript" src="Game/Views/Res.js"></script>
+  </body>
+</html>
