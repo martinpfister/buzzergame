@@ -14,8 +14,13 @@
 
     <!-- Game Templates -->
     <script id="selected" type="text/template">
-    <% _.each(selected, function(animal) { %> 
-        <li class="<%= animal.category %>"><%= animal.title %></li>
+    <% var IE8Class = 1; %>
+    <% _.each(selected, function(animal) { %>
+        
+        <li class="<%= animal.category %> nth-child-<%= IE8Class %>"><%= animal.title %></li>
+
+        <% IE8Class++ %>
+        
     <% }); %>
     </script>
     <script id="slide" type="text/template">

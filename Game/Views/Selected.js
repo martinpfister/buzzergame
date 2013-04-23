@@ -15,6 +15,7 @@ Game.Views.Selected = Backbone.View.extend({
     $('#selected').remove();
     this.remove();
     this.unbind();
+    this.counter = 1;
   },
 
   add_selected : function(current) {
@@ -42,15 +43,10 @@ Game.Views.Selected = Backbone.View.extend({
   render: function(){
     //console.log('rerender');
     //console.log(this.collection.toJSON());
+    console.log(this.el);
     $(this.el).html(this.template({
         selected: this.collection.toJSON()
     }));
-    /**
-     * Hier kommen die IE Hacks :(
-     */
-    $('#selected li:nth-child(3n+1)').addClass('nth-child-1');
-    $('#selected li:nth-child(3n+2)').addClass('nth-child-2');
-    $('#selected li:nth-child(3n+3)').addClass('nth-child-3');
     return this;
   },
 });

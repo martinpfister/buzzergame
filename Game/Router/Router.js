@@ -20,6 +20,7 @@ Game.Router =  Backbone.Router.extend({
     },
 
     play       : function(){
+
         //Kill Start View
         if (Game.Rendered.startView){
             Game.Rendered.startView.destroy_view();
@@ -29,12 +30,15 @@ Game.Router =  Backbone.Router.extend({
         Game.Rendered.slidesView = new Game.Views.Slides({
             collection: Game.Data.animalsCollection 
         });
+
         //Selected View wird erstellt
         Game.Rendered.selectedView = new Game.Views.Selected({
             collection: Game.Data.selectedAnimalsCollection 
         });
+
         //Append Slides
         $(document.body).append(Game.Rendered.slidesView.render().el);
+
     },
 
     res       : function(){

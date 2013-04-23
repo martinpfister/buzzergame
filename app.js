@@ -20,7 +20,7 @@ window.Game = {
 //Die Daten werden definiert
 
 $(document).ready(function() {
-  /**
+ /**
  * Die Eigenschaften aller Tiere
  * @type {Game}
  */
@@ -115,7 +115,6 @@ $(document).ready(function() {
 
   //starte Game
   Game.Rendered.Router = new Game.Router();
-  console.log(Game.Rendered.Router);
   Backbone.history.start()
   //Game.Rendered.Router.history();
 

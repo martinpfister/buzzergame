@@ -2,7 +2,7 @@ Game.Views.Slides = Backbone.View.extend({
   tagName  : 'ul',
   id       : 'slides',
   
-  delay: 1000,
+  delay: 2600,
   currentIndex: 0,
 
   initialize: function() {
@@ -42,11 +42,6 @@ Game.Views.Slides = Backbone.View.extend({
     }, this);
     //append clear selected
     $(document.body).append(Game.Rendered.selectedView.render().el);
-    //style select
-     //Hier kommen die IE Hacks :(
-    $('#selected li:nth-child(3n+1)').addClass('nth-child-1');
-    $('#selected li:nth-child(3n+2)').addClass('nth-child-2');
-    $('#selected li:nth-child(3n+3)').addClass('nth-child-3');
     //init play after first render
     this.play();
     
@@ -55,10 +50,12 @@ Game.Views.Slides = Backbone.View.extend({
   },
 
   destroy_view: function() {
+
     $('#slides').remove();
     $(document).unbind('keypress');
     this.remove();
     this.unbind();
+    clearInterval(this.intervalPlay);
 
   },
 
