@@ -32,7 +32,7 @@ sub { bottom: -0.25em; }
  */
 img {
     -ms-interpolation-mode: bicubic;
-    display: block;
+    /*display: block;*/
 }
 /* Forms
 ================================================== */

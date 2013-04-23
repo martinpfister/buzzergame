@@ -94,6 +94,7 @@ Game.Router =  Backbone.Router.extend({
     res       : function(){
         //Kill Slides View
         if (Game.Rendered.slidesView){
+            console.log('res');
             Game.Rendered.slidesView.destroy_view();
             //unbind keypress from selectedAnimals
             $(document).unbind('keypress');

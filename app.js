@@ -73,14 +73,14 @@ $(document).ready(function() {
       {
         uid       : 6,
         title     : 'Feldhase',
-        text      : 'Der Elefant ist toll',
+        text      : 'Der Feldhase ist toll',
         category  : 'wildtier',
         uribig    : './Bilder/Tiere/feldhase_big.jpg',
         urihg     : './Bilder/Tiere/feldhase_hg.jpg',
         urismall  : './Bilder/Tiere/feldhase_small.jpg'
       },
       {
-        uid       : 6,
+        uid       : 7,
         title     : 'Fisch',
         text      : 'Der Fisch ist toll',
         category  : 'heimtier',

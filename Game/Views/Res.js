@@ -8,6 +8,7 @@ Game.Views.Res = Backbone.View.extend({
   initialize: function() {
     _.bindAll(this, 'render', 'next');
     $(document).bind('keypress', this.next);
+    console.log('res ini');
   },
 
   destroy_view: function() {

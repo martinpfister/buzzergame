@@ -5,13 +5,13 @@ Game.Views.Slide = Backbone.View.extend({
 
   initialize: function() {
     _.bindAll(this, 'test');
-    this.model.on('change:selected', this.test, this)
+   this.model.on('change:selected', this.test, this)
   },
 
   test : function() {
-    
+    console.log('test mediator on change slide');
   },
-
+  
   render: function(){
 
     // This is a dictionary object of the attributes of the models.
