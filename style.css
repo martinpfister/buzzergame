@@ -32,6 +32,7 @@ sub { bottom: -0.25em; }
  */
 img {
     -ms-interpolation-mode: bicubic;
+    display: block;
 }
 /* Forms
 ================================================== */
@@ -57,9 +58,6 @@ legend {
     padding: 0;
     white-space: normal; /* 2 */
 }
-
-
-
 /*
  * 1. Corrects font size not being inherited in all browsers
  * 2. Addresses margins set differently in IE6/7, FF3+, S5, Chrome
@@ -105,15 +103,29 @@ button::-moz-focus-inner,input::-moz-focus-inner {border: 0;padding: 0;}
 /* Styles
 /*----------------------------------------------------------------------------------------------------------*/
 html {
-height: 100%;
+    height: 100%;
 }
 body {
-height: 100%;
+    height: 100%;
+    background: fuchsia url(Bilder/verlauf_hg.jpg) repeat;
+    position: relative;
+    overflow: hidden;
+}
+/* Preload */
+#spinner {
+    width: 260px;
+    height: 260px;
+    background: url(Bilder/spinner.gif);
+    margin: 0 auto;
 }
 /*Start */
 .start {
     display: none;
-    -webkit-transition: opacity 1s ease-out;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
     opacity: 0; 
 }
 #toggel,
@@ -122,7 +134,6 @@ height: 100%;
     opacity: 1;
     display: block;
 }
-
 #toggel,
 #buzzer {
     position: absolute;
@@ -135,35 +146,56 @@ height: 100%;
     right: 150px;
     bottom: 0;
 }
+#waehledrei,
+#welchestier {
+    position: absolute;
+    left: 268px;
+    top: 20px;
+}
+#achtung {
+    padding-top: 20px;
+}
+#achtung,
+#fertig,
+#los {
+    left: 0px;
+}
+#achtung.visible,
+#fertig.visible,
+#los.visible {
+    margin-left: 268px;
+}
+
+
 /* Play */
 img.selected{ border:1px solid black;}
-li img { 
-    width: 100%; 
-    height:auto; 
-    cursor:pointer;
-}
 li { 
     display: block;
     width: 100%;
     float:left;
+    position: relative;
 }
 #selected li {
     position: absolute;
     left: 20px;
     z-index: 1;
-    width: 200px;
-    height: 150px;
-    border: 1px solid red;
-    background: green;
+    width: 242px;
+    height: 329px;
+    background: url(Bilder/fragezeichen_hg_schatten.png);
+}
+#selected img { 
+    position: relative;
+    top: 9px;
+    left: 9px;
 }
 .nth-child-1 {
     top: 20px;
 }
 .nth-child-2 {
-    top: 200px;
+    top: 329px;
 }
 .nth-child-3 {
-    top: 420px;
+    top: 648px;
 }
 
 #slides {
@@ -186,4 +218,33 @@ li {
 }
 li.slide:first-child {
     display: block;
+}
+/* Res */
+#deinewahl {
+    position: absolute;
+    top: 20px;
+    left: 268px;
+}
+#erfahremehr {
+    position: absolute;
+    bottom: 176px;
+    left: 268px;
+}
+.resImage {
+    float: left;
+}
+.resText {
+    padding-left: 30px;
+    float: left;
+}
+.resCategory {
+    position: absolute;
+    right: 20px;
+    bottom: 0;
+    width: 1095px;
+    height: 432px;
+    background: url(Bilder/avatar_auswertung_passt.png);
+}
+.resCategory.wildtier {
+    background: url(Bilder/avatar_auswertung_kein_heinmtier.png);
 }

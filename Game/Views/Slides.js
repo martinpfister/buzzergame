@@ -14,6 +14,7 @@ Game.Views.Slides = Backbone.View.extend({
 
     var keycode = (event.keyCode ? event.keyCode : event.which);
     if(keycode == '13') {
+      
       var current = this.collection.at(0)
                         .collection.at(this.currentIndex);
       current.set('selected',true);

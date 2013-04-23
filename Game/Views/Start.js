@@ -6,6 +6,7 @@ Game.Views.Start = Backbone.View.extend({
   screen: 1,
 
   initialize: function() {
+
     _.bindAll(this, 'render', 'next');
     $(document).bind('keypress', this.next);
 
@@ -16,6 +17,7 @@ Game.Views.Start = Backbone.View.extend({
   },
 
   next: function (event){
+
     var keycode = (event.keyCode ? event.keyCode : event.which);
 
     if(keycode == '13') {
@@ -26,11 +28,13 @@ Game.Views.Start = Backbone.View.extend({
   },
 
   destroy_view: function() {
+
     $('.start').remove();
     this.remove();
     this.unbind();
     $(document).unbind('keypress');
     this.screen = 1;
+
   },
 
   render: function(){
@@ -52,20 +56,25 @@ Game.Views.Start = Backbone.View.extend({
     }
     if (this.screen === 2) {
         $('#welchestier').remove();
+        $('#buzzer').remove();
+
         $('#waehledrei').addClass('visible');
-    }
-    if (this.screen === 3) {
-        $('#waehledrei').remove();
-        $('#achtung').addClass('visible');
+
+        setTimeout(function() {
+           $('#waehledrei').remove();
+           $('#achtung').addClass('visible');
+        }, 2000);
+    //}
+    //if (this.screen === 3) { 
         setTimeout(function() {
             $('#fertig').addClass('visible');
-        }, 1500);
-        setTimeout(function() {
-            $('#los').addClass('visible');
         }, 2500);
         setTimeout(function() {
-            Game.Rendered.Router.navigate('play', {trigger: true});
+            $('#los').addClass('visible');
         }, 3000);
+        setTimeout(function() {
+            Game.Rendered.Router.navigate('play', {trigger: true});
+        }, 3500);
     }
     return this;
 

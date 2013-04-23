@@ -11,6 +11,7 @@ Game.Views.Res = Backbone.View.extend({
   },
 
   destroy_view: function() {
+
     $('.resText, .resCategory, .resImage').remove();
     this.remove();
     this.unbind();
@@ -21,28 +22,26 @@ Game.Views.Res = Backbone.View.extend({
     ]);
     this.screen = 0;
     $(document).unbind('keypress');
+
   },
 
   next: function(){
+
     if (this.screen === 0) {
       Game.Rendered.selectedView.destroy_view();
     }
-    console.log('hitting enter on res');
     this.render();
+  
   },
 
   render: function(){
-    console.log('aktscreen');
-    console.log(this.screen);
-    console.log('thiscollection')
-    console.log(this.collection);
-    console.log('selectedcollection');
-    console.log(Game.Data.selectedAnimalsCollection);
+
     if (this.screen === 3) {
 
-      Game.Rendered.Router.navigate('', {trigger: true});
+      Game.Rendered.Router.navigate('start', {trigger: true});
 
     } else {
+      $('#buzzer, #deinewahl, #erfahremehr').remove();
       $('.resText, .resCategory, .resImage').remove();
       var aktRes = this.collection.models[this.screen];
       var dict = aktRes.toJSON();

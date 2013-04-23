@@ -9,7 +9,7 @@
 
     <!-- Start Template -->
     <script id="start" type="text/template">
-      <div id="<%= uid %>" class="start"><img src="<%= uri %>" height="100" /></div>
+      <div id="<%= uid %>" class="start"><img src="<%= uri %>" /></div>
     </script>
 
     <!-- Game Templates -->
@@ -17,19 +17,19 @@
     <% var IE8Class = 1; %>
     <% _.each(selected, function(animal) { %>
         
-        <li class="<%= animal.category %> nth-child-<%= IE8Class %>"><%= animal.title %></li>
+        <li class="<%= animal.category %> nth-child-<%= IE8Class %>"><div class="imageinside"><img src="<%= animal.urismall %>" /></div></li>
 
         <% IE8Class++ %>
         
     <% }); %>
     </script>
     <script id="slide" type="text/template">
-        <img src="<%= uri %>" />
+        <img src="<%= urihg %>" />
     </script>
 
     <!-- Resultate Template -->
     <script id="res" type="text/template">
-      <img src="<%= uri %>" class="resImage" /><div class="resText"><p><%= text %></p></div><div  class="resCategory <%= category %>"></div>
+      <img src="<%= uribig %>" class="resImage" /><div class="resText"><p><%= text %></p></div><div class="resCategory <%= category %>"></div>
     </script>
 
 

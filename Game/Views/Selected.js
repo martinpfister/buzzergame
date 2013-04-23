@@ -33,6 +33,9 @@ Game.Views.Selected = Backbone.View.extend({
       //Bereits drei tiere ausgewählt?
       if (this.counter > 3) {
         Game.Rendered.Router.navigate('res', {trigger: true});
+        $(document.body).append('<div id="buzzer"><img src="./Bilder/buzzer_start.png" /></div>');
+        $(document.body).append('<div id="deinewahl"><img src="./Bilder/text_deine_wahl.png" /></div>');
+        $(document.body).append('<div id="erfahremehr"><img src="./Bilder/text_gute_wahl_2.png" /></div>');
       }
 
       this.render();
@@ -41,12 +44,12 @@ Game.Views.Selected = Backbone.View.extend({
   },
 
   render: function(){
-    //console.log('rerender');
-    //console.log(this.collection.toJSON());
-    console.log(this.el);
+
     $(this.el).html(this.template({
         selected: this.collection.toJSON()
     }));
     return this;
+
   },
+
 });
